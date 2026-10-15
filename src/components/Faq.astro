@@ -1,0 +1,22 @@
+---
+import { faqs } from "../data/faqs";
+---
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq__grid">
+    <div class="reveal">
+      <p class="kicker">Guide</p>
+      <h2 id="faq-title">来店の前に。</h2>
+    </div>
+    <dl class="faq__list">
+      {
+        faqs.map((item) => (
+          <div class="reveal">
+            <dt>{item.question}</dt>
+            <dd>{item.answer}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

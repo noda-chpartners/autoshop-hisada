@@ -1,5 +1,7 @@
 export const site = {
+  url: "https://autoshop-hisada.pages.dev",
   name: "オートショップヒサダ",
+  legalName: "有限会社オートショップヒサダ",
   phoneDisplay: "052-801-0519",
   phoneTel: "0528010519",
   postal: "470-0125",
