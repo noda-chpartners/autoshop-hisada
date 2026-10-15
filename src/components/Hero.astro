@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import monkey from "../assets/images/IMG_2336.jpeg";
+import { bikes } from "../data/bikes";
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+
+const count = bikes.length;
+---
+
+<section class="hero" id="top">
+  <div class="hero__media">
+    <Image
+      src={monkey}
+      alt="店先に置かれたゴールドのモンキー。黒いシートとメッキのタンク"
+      widths={[720, 1080, 1440, 1920]}
+      sizes="100vw"
+      quality={78}
+      loading="eager"
+      fetchpriority="high"
+      class="hero__img"
+    />
+  </div>
+  <div class="hero__inner">
+    <p class="hero__eyebrow hero__reveal">
+      <span class="tag">日進市赤池</span>
+      <span>赤池駅 {site.walk}</span>
+    </p>
+    <h1 class="hero__title">
+      <span class="hero__line"><span>原付から<wbr />モンキーまで、</span></span>
+      <span class="hero__line"><span>店先で選ぶ。</span></span>
+    </h1>
+    <p class="hero__lead hero__reveal">
+      {site.name}は、カブやスクーターを中心に扱う赤池のバイク店です。価格と走行距離を載せています。気になる一台は、電話のうえ実車をご覧ください。
+    </p>
+    <div class="hero__actions hero__reveal">
+      <a class="btn btn--accent" href="#stock">
+        在庫 {count}台を見る
+      </a>
+      <a class="btn btn--ghost" href={`tel:${site.phoneTel}`}>
+        <Icon name="phone" />
+        {site.phoneDisplay}
+      </a>
+    </div>
+  </div>
+  <dl class="hero__strip hero__reveal">
+    <div>
+      <dt>Open</dt>
+      <dd>{site.hours}</dd>
+    </div>
+    <div>
+      <dt>Closed</dt>
+      <dd>{site.closed}</dd>
+    </div>
+    <div>
+      <dt>Address</dt>
+      <dd>{site.address}</dd>
+    </div>
+  </dl>
+</section>

@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import exterior from "../assets/images/line_oa_chat_260915_104033.jpg";
+import { site } from "../data/site";
+---
+
+<section class="intro" aria-labelledby="intro-title">
+  <div class="wrap intro__grid">
+    <div class="intro__copy reveal">
+      <p class="kicker">About</p>
+      <h2 id="intro-title">赤池の通り沿い、ガラス張りの一階。</h2>
+      <p>
+        {site.station}から{site.walk}。1階のショーウィンドウにカブやスクーターが並び、外のコンクリートの上にも車両を出しています。
+      </p>
+      <p>
+        掲載している車両価格には、登録や整備の費用は含みません。在庫は入れ替わるため、ご来店の前にお電話ください。
+      </p>
+    </div>
+    <figure class="intro__figure reveal">
+      <Image
+        src={exterior}
+        alt="日進市赤池の店舗外観。軒下の看板にオートショップヒサダとある"
+        widths={[720, 1080, 1440]}
+        sizes="(min-width: 960px) 54vw, 100vw"
+        quality={76}
+        class="intro__img"
+      />
+      <figcaption>店舗外観 / 赤池1丁目</figcaption>
+    </figure>
+  </div>
+</section>

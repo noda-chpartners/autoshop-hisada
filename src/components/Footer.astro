@@ -1,0 +1,15 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <p class="site-footer__name">{site.name}</p>
+      <p>〒{site.postal} {site.address}</p>
+      <p>{site.hours} / 定休 {site.closed}</p>
+    </div>
+    <a class="site-footer__tel" href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+    <p class="site-footer__copy">© {new Date().getFullYear()} {site.name}</p>
+  </div>
+</footer>

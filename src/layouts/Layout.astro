@@ -1,0 +1,82 @@
+---
+import "../styles/global.scss";
+import "lenis/dist/lenis.css";
+import { site } from "../data/site";
+import Icon from "../components/Icon.astro";
+import SiteMotion from "../components/SiteMotion.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MotorcycleDealer",
+  name: site.name,
+  telephone: "+81-52-801-0519",
+  address: {
+    "@type": "PostalAddress",
+    postalCode: site.postal,
+    addressRegion: site.region,
+    addressLocality: site.city,
+    streetAddress: site.street,
+    addressCountry: "JP",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday", "Sunday"],
+      opens: "10:00",
+      closes: "18:30",
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#121110" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content="/ogp.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <script is:inline>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-motion");
+      }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へスキップ</a>
+    <slot />
+    <a class="callbar" href={`tel:${site.phoneTel}`}>
+      <Icon name="phone" />
+      <span>電話する</span>
+      <strong>{site.phoneDisplay}</strong>
+    </a>
+    <SiteMotion />
+  </body>
+</html>

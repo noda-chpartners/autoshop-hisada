@@ -1,0 +1,24 @@
+---
+import { bikes } from "../data/bikes";
+import { site } from "../data/site";
+import BikeCard from "./BikeCard.astro";
+---
+
+<section class="stock" id="stock" aria-labelledby="stock-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="kicker">Stock</p>
+        <h2 id="stock-title">店頭の車両 <span class="count">{bikes.length}</span></h2>
+      </div>
+      <p class="section-head__note">
+        表示は車両価格です。売約済みの場合があります。ご来店の前に
+        <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+        へお電話ください。
+      </p>
+    </div>
+    <div class="stock__grid">
+      {bikes.map((bike, index) => <BikeCard bike={bike} index={index} />)}
+    </div>
+  </div>
+</section>

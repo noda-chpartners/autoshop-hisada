@@ -1,16 +1,28 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Intro from "../components/Intro.astro";
+import Stock from "../components/Stock.astro";
+import Snaps from "../components/Snaps.astro";
+import Visit from "../components/Visit.astro";
+import Access from "../components/Access.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "オートショップヒサダ｜日進市赤池のバイク店";
+const description =
+  "愛知県日進市赤池のバイク店、オートショップヒサダ。スーパーカブ C65、モンキー、NSR50、ライブディオ ZXなどを店頭でご案内。赤池駅から徒歩4、5分。10:00〜18:30、木曜定休。052-801-0519";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Intro />
+    <Stock />
+    <Snaps />
+    <Visit />
+    <Access />
+  </main>
+  <Footer />
+</Layout>

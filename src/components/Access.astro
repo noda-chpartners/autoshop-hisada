@@ -1,0 +1,54 @@
+---
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<section class="access" id="access" aria-labelledby="access-title">
+  <div class="wrap access__grid">
+    <div class="access__copy reveal">
+      <p class="kicker">Access</p>
+      <h2 id="access-title">赤池駅から{site.walk}。</h2>
+      <ul class="access__list">
+        <li>
+          <Icon name="pin" />
+          <div>
+            <span>住所</span>
+            <p>〒{site.postal} {site.address}</p>
+          </div>
+        </li>
+        <li>
+          <Icon name="train" />
+          <div>
+            <span>最寄り</span>
+            <p>{site.station}</p>
+          </div>
+        </li>
+        <li>
+          <Icon name="clock" />
+          <div>
+            <span>営業時間</span>
+            <p>{site.hoursNote} {site.hours} / 定休日 {site.closed}</p>
+          </div>
+        </li>
+        <li>
+          <Icon name="phone" />
+          <div>
+            <span>電話</span>
+            <p><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></p>
+          </div>
+        </li>
+      </ul>
+      <a class="btn btn--ghost" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+        Googleマップで開く
+      </a>
+    </div>
+    <div class="access__map reveal" data-lenis-prevent>
+      <iframe
+        title="オートショップヒサダの地図"
+        src={site.mapEmbed}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

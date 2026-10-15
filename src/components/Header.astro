@@ -1,0 +1,22 @@
+---
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="#top">
+      <span class="site-header__mark" aria-hidden="true">H</span>
+      <span>{site.name}</span>
+    </a>
+    <nav class="site-header__nav" aria-label="ページ内">
+      <a href="#stock">在庫</a>
+      <a href="#shop">店舗</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="site-header__phone" href={`tel:${site.phoneTel}`}>
+      <Icon name="phone" />
+      <span>{site.phoneDisplay}</span>
+    </a>
+  </div>
+</header>
