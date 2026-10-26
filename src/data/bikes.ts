@@ -1,6 +1,8 @@
 import type { ImageMetadata } from "astro";
 import c65Front from "../assets/images/IMG_2338.jpeg";
 import c65Side from "../assets/images/IMG_2340.jpeg";
+import ns1Side from "../assets/images/IMG_3484.JPG";
+import ns1Front from "../assets/images/IMG_3485.JPG";
 import monkeyFront from "../assets/images/IMG_2343.jpeg";
 import monkeySide from "../assets/images/IMG_2342.jpeg";
 import goldFront from "../assets/images/IMG_2332.jpeg";
@@ -50,8 +52,11 @@ export const bikes: Bike[] = [
     swatch: "#c4452d",
     price: 380000,
     mileage: 13675,
-    images: [],
-    alts: [],
+    images: [ns1Side, ns1Front],
+    alts: [
+      "赤いホンダ NS-1の側面。タンクにホンダの翼マークがある",
+      "赤いホンダ NS-1の正面。丸型の2灯ヘッドライトとスクリーンがある",
+    ],
   },
   {
     id: "nsr50",
