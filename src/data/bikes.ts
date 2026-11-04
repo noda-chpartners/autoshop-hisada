@@ -36,7 +36,7 @@ export const bikes: Bike[] = [
     name: "スーパーカブ C65",
     color: "グレー",
     swatch: "#8d8d89",
-    price: 500000,
+    price: 330000,
     mileage: 6860,
     images: [c65Side, c65Front],
     alts: [
@@ -50,7 +50,7 @@ export const bikes: Bike[] = [
     name: "NS-1",
     color: "レッド",
     swatch: "#c4452d",
-    price: 380000,
+    price: 550000,
     mileage: 13675,
     images: [ns1Side, ns1Front],
     alts: [
@@ -64,7 +64,7 @@ export const bikes: Bike[] = [
     name: "NSR50",
     color: "レッド",
     swatch: "#c4452d",
-    price: 450000,
+    price: 498000,
     mileage: 11138,
     images: [nsrSide, nsrFront],
     alts: [
@@ -78,7 +78,7 @@ export const bikes: Bike[] = [
     name: "モンキー Z50J",
     color: "ホワイト",
     swatch: "#f4f1ea",
-    price: 480000,
+    price: 380000,
     mileage: 7536,
     spec: "ボアアップ 88cc",
     images: [monkeySide, monkeyFront],
@@ -107,7 +107,7 @@ export const bikes: Bike[] = [
     name: "リモコンジョグ",
     color: "ブラック",
     swatch: "#1c1c1c",
-    price: 330000,
+    price: 288000,
     mileage: 18000,
     images: [jogSide, jogFront],
     alts: [
