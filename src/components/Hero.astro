@@ -28,15 +28,16 @@ const count = bikes.length;
     </p>
     <h1 class="hero__title">
       <span class="hero__shop hero__reveal">{site.name}</span>
-      <span class="hero__line"><span>原付から<wbr />モンキーまで、</span></span>
-      <span class="hero__line"><span>店先で選ぶ。</span></span>
+      <span class="hero__line"><span>他店にはない</span></span>
+      <span class="hero__line"><span>めずらしいバイク<wbr />のある店</span></span>
     </h1>
     <p class="hero__lead hero__reveal">
-      {site.name}は、カブやスクーターを中心に扱う赤池のバイク店です。価格と走行距離を載せています。気になる一台は、電話のうえ実車をご覧ください。
+      {site.name}はカブやスクーターだけでなく<br />
+      めずらしい希少なバイクも扱う赤池のバイク店です
     </p>
     <div class="hero__actions hero__reveal">
       <a class="btn btn--accent" href="#stock">
-        在庫 {count}台を見る
+        在庫のうち{count}台を紹介
       </a>
       <a class="btn btn--ghost" href={`tel:${site.phoneTel}`}>
         <Icon name="phone" />
